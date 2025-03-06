@@ -283,6 +283,8 @@ internal object PatchCommand : Runnable {
 
         // endregion
 
+        apk.copyTo(temporaryFilesPath.resolve("in.apk"), overwrite = true)
+
         val patcherTemporaryFilesPath = temporaryFilesPath.resolve("patcher")
 
         val (packageName, patcherResult) = Patcher(
